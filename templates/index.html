@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defogging Website</title>
+</head>
+<body>
+        <h1>
+            Add Data :
+        </h1>
+        <br>
+        <br>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          // generate an input tag to input image file saying "Add images"
+            <input type="file" name="image" id="imageInp" accept="image/*" >
+            <button type="submit">Show Defogged Output</button>
+        </form> 
+
+        <!--<form action='/upload' method="post">
+            
+                   <label for="first_name"><b>Temperature</b></label>
+                  <br>
+                <input placeholder="Temperature in Celsius" name="Temperature" id="first_name" type="text" class="validate">
+                <label for="last_name"><b>Oxygen </b></label>
+                  <br>
+                <input id="last_name" name="Oxygen" placeholder="Oxygen content in ppm"  type="text" class="validate">
+               <label for="_name"><b>Humidity</b></label>
+                  <br>
+                <input id="_name" name="Humidity" placeholder="Humidity %" type="text" class="validate"> 
+                <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+          </form>-->
+
+
+          {% if img_data %}
+          <h2>Processed Image:</h2>
+          <img src="data:image/png;base64,{{ img_data }}" alt="Processed Image">
+          {% endif %}
+        <!-- <p>
+            {{message}}
+        </p> -->
+</body>
+</html>
